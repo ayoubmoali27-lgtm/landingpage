@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter); 
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--background);
+   font-family: var(--font-sans)
+}
+
+
+.btn {
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background: white;
+  color:rgb(82, 82, 82);
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+.btn:after {
+  content: "";
+  background: hsl(20, 100%, 75%);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.btn:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  transition: all 0.5s;
+}
+
+
+.btn-sign{
+  padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+  color: rgb(38, 38, 38);
+}
+
+.btn-sign:hover {
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, hsl(33, 100%, 76%), hsl(20, 100%, 75%));
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(255, 174, 116) 0px 7px 29px 0px;
+}
+
+.btn-sign:active {
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, hsl(33, 100%, 60%), hsl(20, 100%, 71%));
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(255, 178, 122) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+
+
+
+
+button {
+  font-weight: 600;
+  color:rgb(82, 82, 82)
+}
+
+
+
+
+
+
+
+
+.bt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10rem;
+  transition: all 0.02s;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(37, 37, 37);
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+
+.bt:hover {
+  background: rgb(255, 237, 213);   /* soft light-orange tint on hover */
+  color: rgb(124, 45, 18);          /* dark orange text */
+}
+
+.bt:active {
+  transform: scale(0.97);
+}
+
+.hoverEffect {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hoverEffect div {
+  background: rgb(255, 165, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 200, 0, 1) 0%,      /* light/golden orange */
+    rgba(255, 120, 0, 1) 49%,     /* mid orange */
+    rgba(204, 50, 0, 1) 100%      /* dark orange / red-orange */
+  );
+  border-radius: 40rem;
+  width: 10rem;
+  height: 10rem;
+  transition: 0.4s;
+  filter: blur(20px);
+  animation: effect infinite 3s linear;
+  opacity: 0.5;
+}
+
+.bt:hover .hoverEffect div {
+  width: 8rem;
+  height: 8rem;
+}
+
+@keyframes effect {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
